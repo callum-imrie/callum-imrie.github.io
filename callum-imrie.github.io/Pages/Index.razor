@@ -1,0 +1,33 @@
+﻿@page "/"
+@using callum_imrie.github.io.models
+
+<div class="container">
+    <div class="row justify-content-center">
+        <img class="avatar" src="/assets/images/avatar.png" alt="Avatar"/>
+    </div>
+    
+    <div class="row">
+        <div class="col text-center">
+            <h1>@SelfInformation.Name</h1>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col text-center">
+            <h2>@SelfInformation.Title</h2>
+        </div>
+    </div>
+</div>
+
+@code
+{
+    private SelfInformation SelfInformation { get; set; }
+
+    protected override Task OnInitializedAsync()
+    {
+        SelfInformation = new SelfInformation();
+        
+        return base.OnInitializedAsync();
+    }
+}
+
